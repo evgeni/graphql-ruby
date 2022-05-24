@@ -279,7 +279,7 @@ module GraphQL
         @method_conflict_warning = method_conflict_warning
         @legacy_edge_class = legacy_edge_class
 
-        arguments.each do |name, arg|
+        arguments&.each do |name, arg|
           case arg
           when Hash
             argument(name: name, **arg)
@@ -310,11 +310,11 @@ module GraphQL
         end
 
         # Do this last so we have as much context as possible when initializing them:
-        if extensions.any?
+        if extensions&.any?
           self.extensions(extensions)
         end
 
-        if directives.any?
+        if directives&.any?
           directives.each do |(dir_class, options)|
             self.directive(dir_class, **options)
           end
