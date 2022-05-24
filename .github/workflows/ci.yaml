@@ -46,6 +46,8 @@ jobs:
             bundler: "1"
           - gemfile: gemfiles/rails_5.2.gemfile
             ruby: 2.7
+          - gemfile: gemfiles/rails_6.1.gemfile
+            ruby: 2.5
           # Rails 6.1 is tested with Postgresql below
           - gemfile: gemfiles/rails_7.0.gemfile
             ruby: 3.0
